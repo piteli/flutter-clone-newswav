@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "338731619464",
+    "firebase_url": "https://flutter-clone-newswav.firebaseio.com",
+    "project_id": "flutter-clone-newswav",
+    "storage_bucket": "flutter-clone-newswav.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:338731619464:android:603b29a2956b5ff98efb3d",
+        "android_client_info": {
+          "package_name": "com.piteli.flutter_clone_newswav"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "338731619464-839mo6mvd4lhi9e4dvv955dt47k3ea2s.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAB4cKgybgvOno3WRHnsqF7wsG6FSMsM_U"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "338731619464-839mo6mvd4lhi9e4dvv955dt47k3ea2s.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
