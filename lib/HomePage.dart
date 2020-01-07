@@ -56,8 +56,42 @@ class _HomeState extends State<Home> {
               },)
           ]
         ),
-      )
+      ),
+      body : new ListView.builder(itemCount : snapshot.length, itemBuilder: (context, index){
+        return new Card(
+          elevation : 10.0,
+          margin : EdgeInsets.all(10.0),
+          child : new Container(
+            padding : EdgeInsets.all(10.0),
+            child : new Row(
+              mainAxisAlignment: MainAxisAlignment.start,
+              children : <Widget>[
+                new CircleAvatar(
+                  child : new Text(snapshot[index].data["title"][0]),
+                  backgroundColor: Colors.redAccent,
+                  foregroundColor: Colors.white,
+                ),
+                new SizedBox(width: 10.0,),
+                new Container(
+                  width : 210.0,
+                  child : new Column(
+                    crossAxisAlignment : CrossAxisAlignment.start,
+                    children : <Widget>[
+                      new Text(snapshot[index].data["title"],
+                      style : TextStyle(fontSize: 22.0, color : Colors.green),
+                      maxLines : 1),
+                      new SizedBox(height : 5.0),
+                      new Text(snapshot[index].data["content"],
+                      maxLines: 2,)
+                    ]
+                  )
+                )
 
+              ]
+            )
+          )
+        );
+      })
 
     );
   }
