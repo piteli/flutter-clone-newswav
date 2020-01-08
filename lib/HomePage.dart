@@ -1,7 +1,10 @@
+import 'dart:html';
+
 import 'package:flutter/material.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:async/async.dart';
 import 'dart:async';
+import 'PostDetailsPage.dart';
 
 class Home extends StatefulWidget {
   @override
@@ -23,6 +26,10 @@ class _HomeState extends State<Home> {
         snapshot = datasnapshot.documents;
       });
     });
+  }
+
+  passData(DocumentSnapshot snap){
+    Navigator.of(context).push(new MaterialPageRoute(builder: (context) => PostDetails(snapshot: snap)));
   }
 
   @override
@@ -77,9 +84,16 @@ class _HomeState extends State<Home> {
                   child : new Column(
                     crossAxisAlignment : CrossAxisAlignment.start,
                     children : <Widget>[
-                      new Text(snapshot[index].data["title"],
-                      style : TextStyle(fontSize: 22.0, color : Colors.green),
-                      maxLines : 1),
+
+                      new InkWell(
+                        child: new Text(snapshot[index].data["title"],
+                            style : TextStyle(fontSize: 22.0, color : Colors.green),
+                            maxLines : 1),
+                        onTap: (){
+                          passData(snapshot[index]);
+                        },
+                      ),
+
                       new SizedBox(height : 5.0),
                       new Text(snapshot[index].data["content"],
                       maxLines: 2,)
